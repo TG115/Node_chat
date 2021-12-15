@@ -1,21 +1,33 @@
 const express = require('express');
 
-const app = express();
+// 라우터 경로 설정
+const bbsRouter = require('./router/bbs');
+const chatRouter = require('./router/chat');
 
+// express 핵심코드
+const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// server와 browser가 연결될때까지 기다리는 것
-app.listen(3000, () => {
+
+// 라우터 연결
+app.use('/bbs', bbsRouter);
+app.use('/chat', chatRouter);
+
+
+// 포트 오픈
+let server = app.listen(3000, () => {
     console.log('listening on 3000');
 })
 
-app.get('/', (req, res) => {
-    res.send(req.query.test);
-})
+// app.get('/', (req, res) => {
+//     res.send(req.query.test);
+// })
 
-app.post('/', (req, res) => {
-    console.log(req);
-    res.send(req.body);
-})
+// app.post('/', (req, res) => {
+//     console.log(req);
+//     res.send(req.body);
+// })
+
+module.exports = server;
