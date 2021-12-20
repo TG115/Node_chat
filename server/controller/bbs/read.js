@@ -1,5 +1,5 @@
 const express = require('express');
 
 module.exports = (req, res) => {
-    res.send('r');
+    res.send(req.query);
 }
