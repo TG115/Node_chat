@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
-import styles from "./App.module.css";
+import Table from "./Table";
+import Pagination from "./Pagination";
+import styles from "./Board.module.css";
 
-function App() {
+function Board() {
   const [value, setValue] = useState(0);
   const [keyword, setKeyword] = useState("");
   const onClick = () => setValue((prev) => prev + 1);
@@ -18,12 +20,14 @@ function App() {
 
   return (
     <div>
-      <h1 className={styles.title}>Welcome back!!! : {value}</h1>
-      <input type="text" placeholder="input here" onChange={onChange} value={keyword} />
+      <h1 className={styles.title}>Welcome board</h1>
+      {/* <input type="text" placeholder="input here" onChange={onChange} value={keyword} />
       <button onClick={onClick}>Click Me!</button>
-      <Button text={"hello"} />
+      <Button text={"hello"} /> */}
+      <Table />
+      <Pagination />
     </div>
   );
 }
 
-export default App;
+export default Board;
