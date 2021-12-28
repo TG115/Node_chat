@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Table.module.css";
 
-function Table({page}) {
+function Table() {
     return <table className={styles.boardTable}>
         <thead>
             <tr>
