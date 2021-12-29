@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 // import Button from "./Button";
-import Table from "./Table";
 import Pagination from "./Pagination";
 import styles from "./Board.module.css";
 
@@ -24,7 +23,6 @@ function Board() {
       {/* <input type="text" placeholder="input here" onChange={onChange} value={keyword} />
       <button onClick={onClick}>Click Me!</button>
       <Button text={"hello"} /> */}
-      <Table />
       <Pagination page={1} />
     </div>
   );
